@@ -138,7 +138,7 @@ function generateToken(user) {
   };
 
   // extract the secret away so it can be required and used where needed
-  return jwt.sign(payload, secrets.jwtSecret, options); // this method is synchronous
+  return jwt.sign(payload, 'shh', options); // this method is synchronous
 }
 
 
