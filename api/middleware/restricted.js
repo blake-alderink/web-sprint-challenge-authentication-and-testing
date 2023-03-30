@@ -8,9 +8,12 @@ if (token) {
 
     jwt.verify(token, "shh", (err, decoded) => {
       if (err) {
-        
-        // console.log('there was an error in the decode');
-        next({message: "token invalid"})
+       return res.status(404).json({message: "token invalid"})
+        // const returnObj = {message: 'token invalid'}
+        // req.invalidToken = returnObj;
+        // // console.log('there was an error in the decode');
+        // console.log(returnObj);
+        // next(req.invalidToken)
       } else {
         
         next()
