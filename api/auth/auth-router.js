@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
     res.status(404).json({
       message: 'username and password required'
     })
-  }
+  } else 
 
 
   if (user && bcrypt.compareSync(req.body.password, user.password)) {
