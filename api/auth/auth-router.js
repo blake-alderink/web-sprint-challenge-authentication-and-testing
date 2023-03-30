@@ -12,7 +12,7 @@ try {
 //if (exists) { return "this username is already taken"} otherwise continue onwards.
 
 if (exists) {
-  res.status(404).json({ message: "this username is taken, sorry"})
+  res.status(404).json({ message: "username taken"})
 } 
 else if (req.body.username && req.body.password) {
 
@@ -29,7 +29,7 @@ res.status(201).json(returnObj);
 
 
 } else {
-  res.status(404).json({message: "must provide both a username and password"})
+  res.status(404).json({message: "username and password required"})
 }
 
 }
