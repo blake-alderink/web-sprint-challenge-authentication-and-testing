@@ -8,7 +8,7 @@ if (token) {
 
     jwt.verify(token, "ssh", (err, decoded) => {
       if (err) {
-        next({message: "token invalid"})
+        next({status: 404, message: "token invalid"})
       } else {
         req.decodedJwt = decoded;
         next()
