@@ -6,11 +6,13 @@ const token = req.headers.authorization;
 
 if (token) {
 
-    jwt.verify(token, "ssh", (err, decoded) => {
+    jwt.verify(token, "shh", (err, decoded) => {
       if (err) {
-        next({status: 404, message: "token invalid"})
+        
+        // console.log('there was an error in the decode');
+        next({message: "token invalid"})
       } else {
-        req.decodedJwt = decoded;
+        
         next()
       }
     })
